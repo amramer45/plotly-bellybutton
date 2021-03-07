@@ -95,6 +95,22 @@ id = "940"
     });
 
 // Demographic Data
+
+// //function buildMetadata(sample) {
+// d3.json("./data/samples.json").then((data) => {
+//     var metadata = data.metadata
+
+//         // set drop down menu
+//     var demoGraph = d3.select("#sample-metadata");
+//     demoGraph.html("");
+//     d3.json(metadata).then(function (data) {
+//         Object.entries(data).forEach(([key, value]) => {
+//             demoGraph.append("h5").text(`${key}: ${value}`);
+//         });
+//     });
+// });
+
+
 d3.json("./data/samples.json").then((data) => {
     var metadata = data.metadata
 
