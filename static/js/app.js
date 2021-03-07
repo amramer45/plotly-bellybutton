@@ -83,12 +83,8 @@ id = "940"
         var layout2 = {
             xaxis: {title: "OTU ID"},
             yaxis: {title: "Freqeuncy"},
-            margin: {
-                l: 100,
-                r: 100,
-                t: 100,
-                b: 100
-            }
+            height: 500,
+            width: 1000
         };
 
 
