@@ -20,20 +20,30 @@ id = "940"
         console.log(`OTU ID: ${otuIds}`)
         //Add OTU to value for char visualization 
 
+
         //otu_labels
         var otuLabel = selectedSample.otu_labels.slice(0, 10).reverse();
         console.log(`OTU Labels: ${otuLabel}`)
 
-        // // create data variable
-        // var data1 = [trace];
+        //trace
+        var trace1 = {
+            type: "bar",
+            name: "banana",
+            x: sampleValues,
+            y: otuIds,
+            orientation: "h"
+        };
+
+        // create data variable
+        var data1 = [trace1];
 
         // //create layout
-        // var layout = {
-        //     title: ""
-        // };
+        var layout1 = {
+            title: "Top 10 OTU IDs for Selected ID"
+        };
 
-        // //create the bar plot
-        // Plotly.newPlot("bar", data1, layout);
+        //create the bar plot
+        Plotly.newPlot("bar", data1, layout1);
 
 
         // ////////// bubble/////////
