@@ -89,8 +89,56 @@ id = "940"
 
         Plotly.newPlot("bubble", data2, layout2);
 
-        // //create
-        // Plotly.newPlot("guage", data3, layout3);
+        //create guage chart
+        var sampleValuesGuage = selectedSample.sample_values;
+        var otuIdsGuage = selectedSample.otu_ids;
+        var otuLabelGuage = selectedSample.otu_labels;
+
+        var washFreq = data.metadata.map(d => d.wfreq)
+        console.log(`Washing Frequency: ${washFreq}`);
+
+        //trace
+        var trace3 = {
+            domain: {x: [0, 1], y: [0, 1]},
+            type: "indicator",
+            mode: "gauge+number",
+            value: washFreq,
+            title: { text: "Belly Button Washing Frequency" },
+            gauge: {
+                axis: { range: [0, 9], tickwidth: 0.5, tickcolor: "black" },
+                bar: { color: "#669999" },
+                bgcolor: "white",
+                borderwidth: 2,
+                bordercolor: "transparent",
+                steps: [
+                    { range: [0, 1], color: "#fff" },
+                    { range: [1, 2], color: "#e6fff5" },
+                    { range: [2, 3], color: "#ccffeb" },
+                    { range: [3, 4], color: "#b3ffe0" },
+                    { range: [4, 5], color: "#99ffd6" },
+                    { range: [5, 6], color: "#80ffcc" },
+                    { range: [6, 7], color: "#66ffc2" },
+                    { range: [7, 8], color: "#4dffb8" },
+                    { range: [8, 9], color: "#33ffad" }
+
+                ],
+            }
+        };
+
+        //create data variable 
+        data3 = [trace3];
+
+        //layout
+        var layout3 = {
+            width: 600,
+            height: 500,
+            margin: {
+                t: 0,
+                b: 0
+            }
+        };
+
+        Plotly.newPlot("guage", data3, layout3);
 
     });
 
