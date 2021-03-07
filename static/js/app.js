@@ -1,20 +1,22 @@
 // getting data from the json file
-function getPlot(id) {
-    
+//function getPlot(id) {
+id = "940"
+
     // Read in the JSON data
     d3.json("./data/samples.json").then((data) => {
-    console.log(data);
-
-        var wfreq = data.metadata.map(d => d.wfreq)
-        console.log(`Washing Freq: ${wfreq}`)    
+    console.log(data)  
     
         //////////// bar /////////
-        var samples = data.samples.filter(s => s.id.toString() === id)[0];
-        console.log(samples);
+        var selectedSample = data.samples.filter(item => item.id.toString() === id)[0];
+        console.log(selectedSample);
 
-        // //samples_values
+        // get only top 10 sample values to plot and reverse for the plotly
+        var sampleValues = selectedSample.sample_values.slice(0, 10).reverse();
+        console.log(sampleValues)
         
-        // //otu_ids
+        //otu_ids
+        var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
+        console.log(otuIds)
 
         // //otu_labels
 
@@ -45,4 +47,4 @@ function getPlot(id) {
 
     });
 
-};
+//};
