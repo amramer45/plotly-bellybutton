@@ -90,9 +90,9 @@ id = "940"
         Plotly.newPlot("bubble", data2, layout2);
 
         //create guage chart
-        var sampleValuesGuage = selectedSample.sample_values;
-        var otuIdsGuage = selectedSample.otu_ids;
-        var otuLabelGuage = selectedSample.otu_labels;
+        var sampleValuesGauge = selectedSample.sample_values;
+        var otuIdsGauge = selectedSample.otu_ids;
+        var otuLabelGauge = selectedSample.otu_labels;
 
         var washFreq = data.metadata.map(d => d.wfreq)
         console.log(`Washing Frequency: ${washFreq}`);
@@ -102,6 +102,7 @@ id = "940"
             domain: {x: [0, 1], y: [0, 1]},
             type: "indicator",
             mode: "gauge+number",
+            //
             value: washFreq,
             title: { text: "Belly Button Washing Frequency" },
             gauge: {
@@ -138,7 +139,7 @@ id = "940"
             }
         };
 
-        Plotly.newPlot("guage", data3, layout3);
+        Plotly.newPlot("gauge", data3, layout3);
 
     });
 
