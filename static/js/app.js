@@ -60,6 +60,38 @@ id = "940"
         // // Use otu_ids for the marker colors.
         // // Use otu_labels for the text values
 
+        var sampleValuesBubble = selectedSample.sample_values
+        var otuIdsBubble = selectedSample.otu_ids
+        var otuLabelBubble = selectedSample.otu_labels
+
+        //trace
+        var trace2 = {
+            x: otuIdsBubble,
+            y: sampleValuesBubble,
+            mode: "markers"
+            marker: {
+                size: sampleValuesBubble,
+                color: otuIdsBubble
+            }
+            text: otuLabelBubble
+        };
+
+        // create data variable
+        var data2 = [trace2];
+
+        // //create layout
+        var layout2 = {
+            xaxis: {title: "OTU ID"},
+            yaxis: {title: "Freqeuncy"},
+            margin: {
+                l: 100,
+                r: 100,
+                t: 100,
+                b: 100
+            }
+        };
+
+
         // //create 
         // Plotly.newPlot("bubble", data2, layout2);
 
@@ -69,5 +101,5 @@ id = "940"
     });
 
 // Demographic Data
- 
+
 //};
