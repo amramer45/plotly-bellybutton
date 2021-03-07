@@ -60,19 +60,19 @@ id = "940"
         // // Use otu_ids for the marker colors.
         // // Use otu_labels for the text values
 
-        var sampleValuesBubble = selectedSample.sample_values
-        var otuIdsBubble = selectedSample.otu_ids
-        var otuLabelBubble = selectedSample.otu_labels
+        var sampleValuesBubble = selectedSample.sample_values;
+        var otuIdsBubble = selectedSample.otu_ids;
+        var otuLabelBubble = selectedSample.otu_labels;
 
         //trace
         var trace2 = {
             x: otuIdsBubble,
             y: sampleValuesBubble,
-            mode: "markers"
+            mode: "markers",
             marker: {
                 size: sampleValuesBubble,
                 color: otuIdsBubble
-            }
+            },
             text: otuLabelBubble
         };
 
@@ -97,13 +97,13 @@ id = "940"
 // Demographic Data
 d3.json("./data/samples.json").then((data) => {
     var metadata = data.metadata
-    console.log(metadata)
 
-    var selectedSample2 = metadata.filter(item => item.id === id)[0];
+    var selectedSample2 = metadata.filter(item => item.id.toString() === id)[0];
+    console.log(selectedSample2)
 
+    // set drop down menu
     var demoGraph = d3.select("#sample-metadata")
 
-    
 });
 
 //};
