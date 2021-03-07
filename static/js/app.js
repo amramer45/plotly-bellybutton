@@ -19,6 +19,7 @@ id = "940"
         var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
         console.log(`OTU ID: ${otuIds}`)
         //Add OTU to value for char visualization 
+        otuIdsWord = otuIds.map(x => "OTU: " + x)
 
 
         //otu_labels
@@ -28,9 +29,8 @@ id = "940"
         //trace
         var trace1 = {
             type: "bar",
-            name: "banana",
             x: sampleValues,
-            y: otuIds,
+            y: otuIdsWord,
             orientation: "h"
         };
 
@@ -39,7 +39,14 @@ id = "940"
 
         // //create layout
         var layout1 = {
-            title: "Top 10 OTU IDs for Selected ID"
+            title: "Top 10 OTU IDs for Selected ID",
+            yaxis: {},
+            margin: {
+                l: 100,
+                r: 100,
+                t: 100,
+                b: 100
+            }
         };
 
         //create the bar plot
