@@ -102,7 +102,13 @@ d3.json("./data/samples.json").then((data) => {
     console.log(selectedSample2)
 
     // set drop down menu
-    var demoGraph = d3.select("#sample-metadata")
+    var demoGraph = d3.select("#sample-metadata");
+    demoGraph.html("");
+    d3.json(metadata).then(function (data) {
+        Object.entries(data).forEach(([key, value]) => {
+            demoGraph.append("h5").text(`${key}: ${value}`);
+        });
+    });
 
 });
 
