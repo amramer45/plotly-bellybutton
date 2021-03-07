@@ -1,8 +1,8 @@
 // getting data from the json file
-function getPlot(id) {
+// function getPlot(id) {
     
     // Read in the JSON data
-    d3.json("/data/samples.json").then((data) => {
+    d3.json("./data/samples.json").then((data) => {
     console.log(data);
 
         //////////// bar /////////
@@ -42,4 +42,4 @@ function getPlot(id) {
 
     });
 
-};
+//};
