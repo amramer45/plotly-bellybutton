@@ -102,11 +102,10 @@ id = "940"
             domain: {x: [0, 1], y: [0, 1]},
             type: "indicator",
             mode: "gauge+number",
-            //
             value: washFreq,
             title: { text: "Belly Button Washing Frequency" },
             gauge: {
-                axis: { range: [0, 9], tickwidth: 0.5, tickcolor: "black" },
+                axis: { range: [0, 9]},
                 bar: { color: "#669999" },
                 bgcolor: "white",
                 borderwidth: 2,
@@ -134,8 +133,10 @@ id = "940"
             width: 600,
             height: 500,
             margin: {
-                t: 0,
-                b: 0
+                t: 20,
+                b: 40,
+                l: 100,
+                r: 100
             }
         };
 
