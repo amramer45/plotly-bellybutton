@@ -79,7 +79,7 @@ id = "940"
         // create data variable
         var data2 = [trace2];
 
-        // //create layout
+        //create layout
         var layout2 = {
             xaxis: {title: "OTU ID"},
             yaxis: {title: "Freqeuncy"},
@@ -87,9 +87,7 @@ id = "940"
             width: 1000
         };
 
-
-        // //create 
-        // Plotly.newPlot("bubble", data2, layout2);
+        Plotly.newPlot("bubble", data2, layout2);
 
         // //create
         // Plotly.newPlot("guage", data3, layout3);
@@ -97,5 +95,15 @@ id = "940"
     });
 
 // Demographic Data
+d3.json("./data/samples.json").then((data) => {
+    var metadata = data.metadata
+    console.log(metadata)
+
+    var selectedSample2 = metadata.filter(item => item.id === id)[0];
+
+    var demoGraph = d3.select("#sample-metadata")
+
+    
+});
 
 //};
