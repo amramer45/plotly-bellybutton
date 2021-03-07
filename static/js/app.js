@@ -8,18 +8,22 @@ id = "940"
     
         //////////// bar /////////
         var selectedSample = data.samples.filter(item => item.id.toString() === id)[0];
+        console.log(`ID Selected: ${id}`)
         console.log(selectedSample);
 
         // get only top 10 sample values to plot and reverse for the plotly
         var sampleValues = selectedSample.sample_values.slice(0, 10).reverse();
+        console.log(`Selected Sample: ${sampleValues}`)
         console.log(sampleValues)
         
         //otu_ids
         var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
+        console.log(`OTU ID Values: ${otuIds}`)
         console.log(otuIds)
 
         //otu_labels
         var otuLabel = selectedSample.otu_labels.slice(0, 10).reverse();
+        console.log(`OTU Labels: ${otuLabel}`)
         console.log(otuLabel)
 
         // // create data variable
