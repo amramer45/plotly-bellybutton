@@ -5,9 +5,12 @@ function getPlot(id) {
     d3.json("./data/samples.json").then((data) => {
     console.log(data);
 
+        var wfreq = data.metadata.map(d => d.wfreq)
+        console.log(`Washing Freq: ${wfreq}`)    
+    
         //////////// bar /////////
-        var sample_value = data.samples.filter(info => info)
-        console.log(sample_value)
+        var samples = data.samples.filter(s => s.id.toString() === id)[0];
+        console.log(samples);
 
         // //samples_values
         
