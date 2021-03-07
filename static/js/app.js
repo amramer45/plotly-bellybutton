@@ -14,17 +14,15 @@ id = "940"
         // get only top 10 sample values to plot and reverse for the plotly
         var sampleValues = selectedSample.sample_values.slice(0, 10).reverse();
         console.log(`Selected Sample: ${sampleValues}`)
-        console.log(sampleValues)
         
         //otu_ids
         var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
-        console.log(`OTU ID Values: ${otuIds}`)
-        console.log(otuIds)
+        console.log(`OTU ID: ${otuIds}`)
+        //Add OTU to value for char visualization 
 
         //otu_labels
         var otuLabel = selectedSample.otu_labels.slice(0, 10).reverse();
         console.log(`OTU Labels: ${otuLabel}`)
-        console.log(otuLabel)
 
         // // create data variable
         // var data1 = [trace];
