@@ -1,13 +1,13 @@
 // getting data from the json file
-// function getPlot(id) {
+function getPlot(id) {
     
     // Read in the JSON data
     d3.json("./data/samples.json").then((data) => {
     console.log(data);
 
         //////////// bar /////////
-        // var sample_value = data.samples.filter(info => info)
-        // console.log(sample_value)
+        var sample_value = data.samples.filter(info => info)
+        console.log(sample_value)
 
         // //samples_values
         
@@ -42,4 +42,4 @@
 
     });
 
-//};
+};
