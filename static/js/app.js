@@ -112,15 +112,15 @@ id = "940"
                 borderwidth: 2,
                 bordercolor: "transparent",
                 steps: [
-                    { range: [0, 1], color: "#fff" },
-                    { range: [1, 2], color: "#e6fff5" },
-                    { range: [2, 3], color: "#ccffeb" },
-                    { range: [3, 4], color: "#b3ffe0" },
-                    { range: [4, 5], color: "#99ffd6" },
-                    { range: [5, 6], color: "#80ffcc" },
-                    { range: [6, 7], color: "#66ffc2" },
-                    { range: [7, 8], color: "#4dffb8" },
-                    { range: [8, 9], color: "#33ffad" }
+                    { range: [0, 1], color: "#e5d5e8" },
+                    { range: [1, 2], color: "#ddbce3" },
+                    { range: [2, 3], color: "#d8abe0" },
+                    { range: [3, 4], color: "#d093db" },
+                    { range: [4, 5], color: "#cc82d9" },
+                    { range: [5, 6], color: "#c46ad4" },
+                    { range: [6, 7], color: "#be54d1" },
+                    { range: [7, 8], color: "#b63bcc" },
+                    { range: [8, 9], color: "#9e11b8" }
 
                 ],
             }
