@@ -18,7 +18,9 @@ id = "940"
         var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
         console.log(otuIds)
 
-        // //otu_labels
+        //otu_labels
+        var otuLabel = selectedSample.otu_labels.slice(0, 10).reverse();
+        console.log(otuLabel)
 
         // // create data variable
         // var data1 = [trace];
