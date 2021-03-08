@@ -82,7 +82,7 @@ function getPlot(id) {
         //create layout
         var layout2 = {
             xaxis: {title: "Operational Taxonomic Unit (OTU) ID"},
-            yaxis: {title: "Wash Frequency"},
+            yaxis: {title: "Frequency"},
             height: 500,
             width: 1000
         };
