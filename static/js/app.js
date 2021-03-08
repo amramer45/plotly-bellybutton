@@ -172,7 +172,7 @@ function getInfo(id) {
 }
 
 //Event change function
-function selectChange(id) {
+function optionChanged(id) {
     getPlot(id);
     getInfo(id);
 }
