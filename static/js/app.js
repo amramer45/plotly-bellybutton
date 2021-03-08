@@ -1,6 +1,6 @@
 // getting data from the json file
-//function getPlot(id) {
-id = "940"
+function getPlot(id) {
+//id = "940"
 
     // Read in the JSON data
     d3.json("./data/samples.json").then((data) => {
@@ -144,35 +144,58 @@ id = "940"
 
     });
 
-// Demographic Data
-
-// //function buildMetadata(sample) {
-// d3.json("./data/samples.json").then((data) => {
-//     var metadata = data.metadata
-
-//         // set drop down menu
-//     var demoGraph = d3.select("#sample-metadata");
-//     demoGraph.html("");
-//     d3.json(metadata).then(function (data) {
-//         Object.entries(data).forEach(([key, value]) => {
-//             demoGraph.append("h5").text(`${key}: ${value}`);
-//         });
-//     });
-// });
-
+}
 
 function getInfo(id) {
-    d3.json("data/samples.json").then((data) => {
+    //Getting Demographic data
+    d3.json("./data/samples.json").then((data) => {
+        
+        //get metadata for the info panel
         var metadata = data.metadata
         console.log(metadata)
     
-        var result = metadata.filter(meta => meta.id.toString() === id)[0];
+        //Filter
+        var result = data.metadata.filter(item => item.id.toString() === id)[0];
+        
+        //Set drop menu to the selected id
         var demographicInfo = d3.select("#sample-metadata");
+        
+        //Empty the info panel each time
         demographicInfo.html("");
-            Object.entries(result).forEach(([key, value]) => {
-                demographicInfo.append("h5").text(`${key}: ${value}`);
-            });
+        
+        //Append demographic data for the id to the info panel
+        Object.entries(result).forEach((idInfo) => {
+            demographicInfo.append("p").text(`${idInfo[0].toUpperCase()} : ${idInfo[1]}`);
         });
-    };
+    });
 
-//};
+}
+
+//Event change function
+function selectChange(id) {
+    getPlot(id);
+    getInfo(id);
+}
+
+//create the function for the initial data rendering
+function init() {
+    //select dropdown menu
+    var dropdown = d3.select("#selDataset");
+
+    //read the data
+    d3.json("./data/samples.json").then((data) => {
+        console.log(data)
+
+        //get the id data to the dropdown menu
+        data.names.forEach(function(name) {
+            dropdown.append("option").text(name).property("value");
+        });
+
+        //call the functions to display the data and plots
+        getPlot(data.names[0]);
+        getInfo(data.names[0]);
+    
+    });
+}
+
+init();
