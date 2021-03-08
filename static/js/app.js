@@ -99,13 +99,13 @@ function getPlot(id) {
 
         //trace
         var trace3 = {
-            domain: {x: [0, 1], y: [0, 1]},
-            type: "indicator",
-            mode: "gauge+number",
+            domain: { x: [0, 1], y: [0, 1] },
             value: washFreq,
             title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
+            type: "indicator",
+            mode: "gauge+number",
             gauge: {
-                axis: { range: [null, 9], tickwidth: 1, tickcolor: "#000"},
+                axis: { range: [0, 9], tickwidth: 1, tickcolor: "#000" },
                 bar: { color: "#00008b" },
                 bgcolor: "#fff",
                 borderwidth: 2,
@@ -119,7 +119,7 @@ function getPlot(id) {
                     { range: [5, 6], color: "#c46ad4" },
                     { range: [6, 7], color: "#be54d1" },
                     { range: [7, 8], color: "#b63bcc" },
-                    { range: [8, 9], color: "#9e11b8" }
+                    { range: [8, 9], color: "#9e11b8" },
 
                 ],
                 threshold: {
@@ -131,18 +131,18 @@ function getPlot(id) {
         };
 
         //create data variable 
-        data3 = [trace3];
+        var data3 = [trace3];
 
         //layout
         var layout3 = {
-            width: 600,
-            height: 500,
+            width: 500,
+            height: 400,
             margin: {
                 t: 20,
                 b: 40,
                 l: 100,
                 r: 100
-            }
+            },
         };
 
         Plotly.newPlot("gauge", data3, layout3);
