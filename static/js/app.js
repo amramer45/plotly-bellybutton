@@ -18,7 +18,7 @@ id = "940"
         //otu_ids
         var otuIds = selectedSample.otu_ids.slice(0, 10).reverse();
         console.log(`OTU ID: ${otuIds}`)
-        //Add OTU to value for char visualization 
+        //Add OTU to value for chart visualization 
         otuIdsWord = otuIds.map(x => "OTU: " + x)
 
 
@@ -161,21 +161,18 @@ id = "940"
 // });
 
 
-d3.json("./data/samples.json").then((data) => {
-    var metadata = data.metadata
-
-    var selectedSample2 = metadata.filter(item => item.id.toString() === id)[0];
-    console.log(selectedSample2)
-
-    // set drop down menu
-    var demoGraph = d3.select("#sample-metadata");
-    demoGraph.html("");
-    d3.json(metadata).then(function (data) {
-        Object.entries(data).forEach(([key, value]) => {
-            demoGraph.append("h5").text(`${key}: ${value}`);
+function getInfo(id) {
+    d3.json("data/samples.json").then((data) => {
+        var metadata = data.metadata
+        console.log(metadata)
+    
+        var result = metadata.filter(meta => meta.id.toString() === id)[0];
+        var demographicInfo = d3.select("#sample-metadata");
+        demographicInfo.html("");
+            Object.entries(result).forEach(([key, value]) => {
+                demographicInfo.append("h5").text(`${key}: ${value}`);
+            });
         });
-    });
-
-});
+    };
 
 //};
