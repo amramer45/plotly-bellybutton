@@ -81,15 +81,15 @@ function getPlot(id) {
 
         //create layout
         var layout2 = {
-            xaxis: {title: "OTU ID"},
-            yaxis: {title: "Freqeuncy"},
+            xaxis: {title: "Operational Taxonomic Unit (OTU) ID"},
+            yaxis: {title: "Wash Frequency"},
             height: 500,
             width: 1000
         };
 
         Plotly.newPlot("bubble", data2, layout2);
 
-        //create guage chart
+        //create gauge chart
         var sampleValuesGauge = selectedSample.sample_values;
         var otuIdsGauge = selectedSample.otu_ids;
         var otuLabelGauge = selectedSample.otu_labels;
@@ -101,12 +101,13 @@ function getPlot(id) {
         var trace3 = {
             domain: {x: [0, 1], y: [0, 1]},
             type: "indicator",
-            mode: "gauge+number",
+            mode: "gauge+number+detla",
+            delta: { reference: 400, increasing: {color: "RebeccaPurple"} },
             value: washFreq,
             title: { text: "Belly Button Washing Frequency" },
             gauge: {
                 axis: { range: [0, 9]},
-                bar: { color: "#669999" },
+                bar: { color: "darkblue" },
                 bgcolor: "white",
                 borderwidth: 2,
                 bordercolor: "transparent",
@@ -122,6 +123,11 @@ function getPlot(id) {
                     { range: [8, 9], color: "#9e11b8" }
 
                 ],
+                threshold: {
+                    line: { color: "darkblue", width: 4},
+                    thickness: 0.75,
+                    value: 490
+                }
             }
         };
 
