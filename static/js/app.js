@@ -101,14 +101,13 @@ function getPlot(id) {
         var trace3 = {
             domain: {x: [0, 1], y: [0, 1]},
             type: "indicator",
-            mode: "gauge+number+delta",
-            delta: { reference: 400, increasing: {color: "RebeccaPurple"} },
+            mode: "gauge+number",
             value: washFreq,
-            title: { text: "Belly Button Washing Frequency" },
+            title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
             gauge: {
-                axis: { range: [null, 9]},
-                bar: { color: "darkblue" },
-                bgcolor: "white",
+                axis: { range: [null, 9], tickwidth: 1, tickcolor: "#000"},
+                bar: { color: "#00008b" },
+                bgcolor: "#fff",
                 borderwidth: 2,
                 bordercolor: "transparent",
                 steps: [
@@ -124,7 +123,7 @@ function getPlot(id) {
 
                 ],
                 threshold: {
-                    line: { color: "darkblue", width: 4},
+                    line: { color: "d#00008b", width: 4},
                     thickness: 0.75,
                     value: 9
                 }
