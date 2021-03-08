@@ -101,12 +101,12 @@ function getPlot(id) {
         var trace3 = {
             domain: {x: [0, 1], y: [0, 1]},
             type: "indicator",
-            mode: "gauge+number+detla",
+            mode: "gauge+number+delta",
             delta: { reference: 400, increasing: {color: "RebeccaPurple"} },
             value: washFreq,
             title: { text: "Belly Button Washing Frequency" },
             gauge: {
-                axis: { range: [0, 9]},
+                axis: { range: [null, 9]},
                 bar: { color: "darkblue" },
                 bgcolor: "white",
                 borderwidth: 2,
@@ -126,7 +126,7 @@ function getPlot(id) {
                 threshold: {
                     line: { color: "darkblue", width: 4},
                     thickness: 0.75,
-                    value: 490
+                    value: 9
                 }
             }
         };
