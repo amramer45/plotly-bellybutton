@@ -86,7 +86,7 @@ function getPlot(id) {
             xaxis: {title: "Operational Taxonomic Unit (OTU) ID"},
             yaxis: {title: "Frequency"},
             height: 500,
-            width: 1000
+            width: 1200
         };
 
         Plotly.newPlot("bubble", data2, layout2);
@@ -96,39 +96,37 @@ function getPlot(id) {
         var washFrequency = data.metadata.map(d => d.wfreq)
         console.log(`Washing Frequency: ${washFrequency}`);
 
-        var data3 = [{
-            domain: { x: [0, 1], y: [0, 1] },
-                    value: washFrequency,
-                    title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
-                    type: "indicator",
-                    mode: "gauge+number",
-                    //delta: {},
-            gauge: {
-                axis: { range: [0, 9], tickwidth: 1, tickcolor: "black" },
-                bar: { color: "#00008b" },
-                bgcolor: "white",
-                borderwidth: 2,
-                bordercolor: "transparent",
-                steps: [
-                    { range: [0, 1], color: "#e5d5e8" },
-                    { range: [1, 2], color: "#ddbce3" },
-                    { range: [2, 3], color: "#d8abe0" },
-                    { range: [3, 4], color: "#d093db" },
-                    { range: [4, 5], color: "#cc82d9" },
-                    { range: [5, 6], color: "#c46ad4" },
-                    { range: [6, 7], color: "#be54d1" },
-                    { range: [7, 8], color: "#b63bcc" },
-                    { range: [8, 9], color: "#9e11b8" },
-
-                ],
+        var data3 = [
+            {
+                domain: { x: [0, 1], y: [0, 1] },
+                value: washFrequency,
+                title: { text: "<b>Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 14} },
+                type: "indicator",
+                mode: "gauge+number",
+                gauge: {
+                    axis: { range: [null, 9] },
+                    bar: { color: "black" },
+                    bordercolor: "transparent",
+                    steps: [
+                        { range: [0, 1], color: "#e5d5e8" },
+                        { range: [1, 2], color: "#ddbce3" },
+                        { range: [2, 3], color: "#d8abe0" },
+                        { range: [3, 4], color: "#d093db" },
+                        { range: [4, 5], color: "#cc82d9" },
+                        { range: [5, 6], color: "#c46ad4" },
+                        { range: [6, 7], color: "#be54d1" },
+                        { range: [7, 8], color: "#b63bcc" },
+                        { range: [8, 9], color: "#9e11b8" },
+                    ],
+                }
             }
-        }];
+        ];
 
 
         //layout
         var layout3 = {
             width: 500,
-            height: 400,
+            height: 425,
             margin: {
                 t: 20,
                 b: 40,
