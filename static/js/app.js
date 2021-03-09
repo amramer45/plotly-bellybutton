@@ -90,24 +90,21 @@ function getPlot(id) {
         Plotly.newPlot("bubble", data2, layout2);
 
         //create gauge chart
-        var sampleValuesGauge = selectedSample.sample_values;
-        var otuIdsGauge = selectedSample.otu_ids;
-        var otuLabelGauge = selectedSample.otu_labels;
 
-        var washFreq = data.metadata.map(d => d.wfreq)
-        console.log(`Washing Frequency: ${washFreq}`);
+        var washFrequency = data.metadata.map(d => d.wfreq)
+        console.log(`Washing Frequency: ${washFrequency}`);
 
-        //trace
-        var trace3 = {
+        var data3 = [{
             domain: { x: [0, 1], y: [0, 1] },
-            value: washFreq,
-            title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
-            type: "indicator",
-            mode: "gauge+number",
+                    value: washFrequency,
+                    title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
+                    type: "indicator",
+                    mode: "gauge+number",
+                    delta: { reference: 400 },
             gauge: {
-                axis: { range: [0, 9], tickwidth: 1, tickcolor: "#000" },
+                axis: { range: [0, 9], tickwidth: 1, tickcolor: "black" },
                 bar: { color: "#00008b" },
-                bgcolor: "#fff",
+                bgcolor: "white",
                 borderwidth: 2,
                 bordercolor: "transparent",
                 steps: [
@@ -122,16 +119,9 @@ function getPlot(id) {
                     { range: [8, 9], color: "#9e11b8" },
 
                 ],
-                threshold: {
-                    line: { color: "d#00008b", width: 4},
-                    thickness: 0.75,
-                    value: 9
-                }
             }
-        };
+        }];
 
-        //create data variable 
-        var data3 = [trace3];
 
         //layout
         var layout3 = {
@@ -143,6 +133,9 @@ function getPlot(id) {
                 l: 100,
                 r: 100
             },
+            font: {
+                color: "black",
+                family: "Arial" }
         };
 
         Plotly.newPlot("gauge", data3, layout3);
