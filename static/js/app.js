@@ -73,8 +73,7 @@ function getPlot(id) {
                 size: sampleValuesBubble,
                 color: otuIdsBubble,
                 colorscale: [[0, 'blue'], [1, 'purple']],
-                symbol: "circle",
-                opacity: 0.7
+                opacity: [1, 0.8, 0.6, 0.4],
             },
             text: otuLabelBubble
         };
