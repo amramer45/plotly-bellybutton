@@ -102,7 +102,7 @@ function getPlot(id) {
                     title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
                     type: "indicator",
                     mode: "gauge+number",
-                    delta: {},
+                    //delta: {},
             gauge: {
                 axis: { range: [0, 9], tickwidth: 1, tickcolor: "black" },
                 bar: { color: "#00008b" },
