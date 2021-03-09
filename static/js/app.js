@@ -71,7 +71,10 @@ function getPlot(id) {
             mode: "markers",
             marker: {
                 size: sampleValuesBubble,
-                color: otuIdsBubble
+                color: otuIdsBubble,
+                colorscale: [[0, 'blue'], [1, 'purple']],
+                symbol: "circle",
+                opacity: 0.7
             },
             text: otuLabelBubble
         };
@@ -100,7 +103,7 @@ function getPlot(id) {
                     title: { text: "Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 18} },
                     type: "indicator",
                     mode: "gauge+number",
-                    delta: { reference: 400 },
+                    delta: {},
             gauge: {
                 axis: { range: [0, 9], tickwidth: 1, tickcolor: "black" },
                 bar: { color: "#00008b" },
