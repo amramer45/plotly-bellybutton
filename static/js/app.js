@@ -67,7 +67,7 @@ function getPlot(id) {
             marker: {
                 size: sampleValuesBubble,
                 color: otuIdsBubble,
-                colorscale: [[0, 'blue'], [1, 'purple']],
+                colorscale: [[0, 'darkblue'], [0.33, 'blue'], [0.67, 'purple'], [1, 'lavender']],
                 opacity: [1, 0.8, 0.6, 0.4],
             },
             text: otuLabelBubble
