@@ -161,7 +161,7 @@ function getInfo(id) {
         
         //Append demographic data for the id to the info panel
         Object.entries(result).forEach((idInfo) => {
-            demographicInfo.append("p").text(`${idInfo[0]} : ${idInfo[1]}`);
+            demographicInfo.append("p").text(`${idInfo[0]} : ${idInfo[1]} \n`);
         });
     });
 
