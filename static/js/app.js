@@ -88,22 +88,17 @@ function getPlot(id) {
 
         //////////create gauge chart///////////
 
-    var washFrequency = data.metadata.map(d => d.wfreq)
+    var selectedID = data.metadata.filter(item => item.id.toString() === id)[0];
+    var washFrequency = selectedID.wfreq;
         //console.log(`Washing Frequency: ${washFrequency}`);
             var data3 = [
                 {domain: { x: [0, 1], y: [0, 1] },
                 value: washFrequency,
                 title: { text: "<b>Belly Button Washing Frequency</br> <br> Scrubs Per Week", font: {size: 14} },
                 type: "indicator",
+                mode: "gauge+number",
                 direction: 'clockwise',
                 showlegend: false,
-                    // hole: 0.4,
-                    // rotation: 90,
-                    // text: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9"],
-                    // direction: "clockwise",
-                    // textinfo: "text",
-                    // textposition: "inside",
-                mode: "gauge+number",
                 gauge: {
                     axis: { range: [0, 9], tickwidth: 1, tickcolor: "d#00008B", showticklables: false },
                     bgcolor: "white",
@@ -126,8 +121,6 @@ function getPlot(id) {
                 
             //layout
             var layout3 = {
-                // xaxis: {visible: false, range: [-1, 1]},
-                // yaxis: {visible: false, range: [-1, 1]},
                 width: 500,
                 height: 425,
                 margin: {
